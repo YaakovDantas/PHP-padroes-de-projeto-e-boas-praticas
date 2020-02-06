@@ -1,20 +1,8 @@
-# Padrões e boas praticas de programação
+# Padrões de Projeto
 
-## Este repositório contém padrões de projeto, SOLID e boas práticas de programação O.O.
+## Este repositório tem 23 padrões de projeto, com exemplos simples de suas implementações e definições dos mesmos.
 
 ## Todos os exemplos foram desenvolvidos em PHP.
-
-## Para testar os exemplos, faça um clone dele.
-
-## Entre na pasta de padrão que desejar via terminal e digite o comando
-
-```
-cd <padrão>
-
-php -S localhost:8080
-```
-
-## Abra o navegador no endereço 'localhost:8080'
 
 ## Você verá a lista de Padrões
 
@@ -25,14 +13,9 @@ php -S localhost:8080
 
 **Fontes**
 
-DESIGN PATTERNS
+[Youtube](https://www.youtube.com/playlist?list=PLF206E906175C7E07)
 
-- [Youtube](https://www.youtube.com/playlist?list=PLF206E906175C7E07)
+[Wikipedia](https://pt.wikipedia.org/wiki/Padr%C3%A3o_de_projeto_de_software)
 
-- [Wikipedia](https://pt.wikipedia.org/wiki/Padr%C3%A3o_de_projeto_de_software)
-
-SOLID
-
--   EM BREVE
 
 ###### A motivação de criar todos esses padrões de projeto foram com a intenção de estudo próprio e crescimento como profissional/desenvolvedor, qualquer má definição ou exemplo, esteja livre para compartilhar seu conhecimento com a comunidade.
