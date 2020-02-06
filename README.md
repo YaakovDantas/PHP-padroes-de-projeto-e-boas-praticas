@@ -28,3 +28,6 @@ php -S localhost:8080
 [Youtube](https://www.youtube.com/playlist?list=PLF206E906175C7E07)
 
 [Wikipedia](https://pt.wikipedia.org/wiki/Padr%C3%A3o_de_projeto_de_software)
+
+
+###### A motivação de criar todos esses padrões de projeto foram com a intenção de estudo próprio e crescimento como profissional/desenvolvedor, qualquer má definição ou exemplo, esteja livre para compartilhar seu conhecimento com a comunidade.
