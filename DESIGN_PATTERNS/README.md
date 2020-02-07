@@ -1,6 +1,6 @@
 # Padrões de Projeto
 
-## Este repositório tem 23 padrões de projeto, com exemplos simples de suas implementações e definições dos mesmos.
+## Este diretório tem 23 padrões de projeto, com exemplos simples de suas implementações e definições dos mesmos.
 
 ## Todos os exemplos foram desenvolvidos em PHP.
 
@@ -8,7 +8,9 @@
 
 ### OBS: A ordem dos padrões não está em ordem de facilidade nem de uso
 
-### OBS2: Caso deseje enviar alguma sugestão/correção de: (Gramática, Definição, Novos Exemplos) .Sinta-se livre para mandar um PR.
+### OBS2: Caso deseje enviar alguma sugestão/correção de: (Gramática, Definição, Novos Exemplos) 
+### Sinta-se livre para mandar um PR.
+
 
 
 **Fontes**
