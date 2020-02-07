@@ -1,15 +1,15 @@
 <?php
-    $raiz = "s/";
+    $raiz = "o/";
     $pastas = [
         $raiz."sem" => "Sem SRP",
         $raiz."com" => "Com SRP",
     ];
 ?>
 <h2>
-    SRP - Single Responsibility Principle
+OCP - Open/Closed Principle
 </h2>
 <p>
-    Princípio da Responsabilidade Única - Uma classe deve ter um, e somente um, motivo para mudar.
+Princípio do Aberto/Fechado - Você deve ser capaz de estender um comportamento de uma classe sem a necessidade de modificá-lo.
 </p>
 
 Exemplos:

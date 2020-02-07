@@ -1,64 +1,79 @@
-<h3>SEM = Princípio da Responsabilidade Única - (S)</h3>
-<p>Temos uma pessoa que ela tem: nome, idade, cor da casa, e dados bancários. </p>
+<h3>SEM = Princípio da Substituição de Liskov - (L)</h3>
+<p>Temos uma Classe pai Retangulo, que podemos definir Base e Altura, por definição matématica um Quadrado é um Retangulo, então podemos estender para Quadrado ser Filho de Retangulo. </p>
+<p>Então podemos sobrescrever os métodos setBase e setAltura, passa quando passar um valor, já colocamos esse valor nos 2 atributos em cada método, já que um quadrado deve ter lados iguais.</p>
 <p>
-Está forma de código não está correta, pois a Pessoa não precisa saber como fazer um depósito ou saber a Cor da sua casa, para ambos os casos, deveriam ter refatorações criando Classes como: Conta, Casa.
+Está forma de código não está correta, estamos alterando os métodos da classe Pai(Retangulo), mesmo que a assinatura e retorno sejam iguais, a lógica dentro do método está diferente.
 </p>
 <p>
 Onde cada uma delas teria a responsabilidade correta e única
 </p>
-Veja solução seguindo o principio <b>S</b> <a href="<?=$raiz?>com">aqui</a>
+Veja solução seguindo o principio <b>L</b> <a href="com">aqui</a>
 <pre>
-class Pessoa
+class Retangulo
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    private $dadosConta;
-    
-    function __construct($nome, $idade, $cor, $dadosConta)
+    function setAltura($altura)
     {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->corDaCasa = $cor;
-        $this->dadosConta = $dadosConta;
+        $this->altura = $altura;
     }
 
-    function pegarCorDaCasa()
+    function setLargura($largura)
     {
-        return $this->corDaCasa;
+        $this->largura = $largura;
     }
 
-    function depositarNoBanco($valor)
+    function calcula()
     {
-        // salvando no banco um valor
+        return $this->largura * $this->altura;
+    }
+}
+
+class Quadrado extends Retangulo
+{
+    function setAltura($altura)
+    {
+        $this->altura = $altura;
+        $this->largura = $altura;
+    }
+
+    function setLargura($largura)
+    {
+        $this->largura = $largura;
+        $this->altura = $largura;
     }
 }
 </pre>
 
 <?php 
 
-class Pessoa
+class Retangulo
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    private $dadosConta;
-    
-    function __construct($nome, $idade, $cor, $dadosConta)
+    function setAltura($altura)
     {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->corDaCasa = $cor;
-        $this->dadosConta = $dadosConta;
+        $this->altura = $altura;
     }
 
-    function pegarCorDaCasa()
+    function setLargura($largura)
     {
-        return $this->corDaCasa;
+        $this->largura = $largura;
     }
 
-    function depositarNoBanco($valor)
+    function calcula()
     {
-        // salvando no banco um valor (toda lógica aqui)
+        return $this->largura * $this->altura;
+    }
+}
+
+class Quadrado extends Retangulo
+{
+    function setAltura($altura)
+    {
+        $this->altura = $altura;
+        $this->largura = $altura;
+    }
+
+    function setLargura($largura)
+    {
+        $this->largura = $largura;
+        $this->altura = $largura;
     }
 }

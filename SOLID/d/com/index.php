@@ -1,157 +1,135 @@
-<h3>Princípio da Responsabilidade Única - (S)</h3>
-<p>Seguindo o conceito da responsabilidade única, agora uma Pessoa só tem ações referente a uma pessoa.</p>
-<p>Criando as Classes Banco e Casa, as responsabilidades de depositar, ou saber dados da casa, estão separados por suas Respectivas Classes.</p>
-<h4>Classe Pessoa</h4>
+<h3>Princípio da inversão de dependência - (D)</h3>
+<p>Seguindo o conceito da inversão de dependência, agora um Interruptor irá ter um método Acionar, que recebe algum Objeto do tipo Dispositivo, onde ele vai mandar o Dispositivo ser acionado.</p>
+<p>
+Assim as classes Ventilador e Lampada saberam se ligar/desligar por elas mesmas
+</p>
+<h4>Interface</h4>
 <pre>
-class Pessoa
+
+interface Dispositivo
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
+    function acionar();
+    function ligar();
+    function desligar();
+}
+
+</pre>
+
+<h4>Classes</h4>
+
+<pre>
+
+class Ventilador implements Dispositivo
+{
+    function ligar() 
+    { 
+        // 
+    }
     
-    function __construct($nome, $idade, Casa $casa)
-    {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->casa = $casa;
-    }
-
-    function getNome()
-    {
-        return $this->nome;
-    }
-
-    function andar()
-    {
+    function desligar() 
+    { 
         //
     }
 
-    function falar()
+    function acionar()
     {
+        /**
+         * Toda lógica para saber se o ventilador irá apagar ou desligar
+         * Se status == true, ligar()
+         * se status == false, desligar
+         */
+    }
+}
+
+class Lampada implements Dispositivo
+{
+    function ligar() 
+    { 
+        // 
+    }
+    
+    function desligar() 
+    { 
         //
     }
 
-    function informarCasa()
+    function acionar()
     {
-        echo "Eu, $this->nome, moro na rua: {$this->casa->getRua()}, numero: {$this->casa->getNumero()} </br>";
+        /**
+         * Toda lógica para saber se a lampada irá apagar ou desligar
+         * Se status == true, ligar()
+         * se status == false, desligar
+         */
     }
 }
-</pre>
 
-<h4>Classe Banco</h4>
-
-<pre>
-class Banco
+class Interruptor
 {
-    public function depositar(Pessoa $pessoa, $valor)
+    function acionar(Dispositivo $dispositivo)
     {
-        echo "{$pessoa->getNome()}, depositou $valor em sua conta.</br>";
+        $dispositivo->acionar();
     }
 }
 
 </pre>
 
-<h4>Classe Casa</h4>
-<pre>
-class Casa
-{
-    private $rua;
-    private $numero;
-    private $cor;
-    
-    function __construct($rua, $numero, $cor)
-    {
-        $this->rua = $rua;
-        $this->numero = $numero;
-        $this->cor = $cor;
-    }
-
-    function getNumero()
-    {
-        return $this->numero;
-    }
-
-    function getRua()
-    {
-        return $this->rua;
-    }
-}
-</pre>
 <?php 
 
-class Pessoa
+interface Dispositivo
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
+    function acionar();
+    function ligar();
+    function desligar();
+}
+
+class Ventilador implements Dispositivo
+{
+    function ligar() 
+    { 
+        // 
+    }
     
-    function __construct($nome, $idade, Casa $casa)
-    {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->casa = $casa;
-    }
-
-    function getNome()
-    {
-        return $this->nome;
-    }
-
-    function andar()
-    {
+    function desligar() 
+    { 
         //
     }
 
-    function falar()
+    function acionar()
     {
+        /**
+         * Toda lógica para saber se o ventilador irá apagar ou desligar
+         * Se status == true, ligar()
+         * se status == false, desligar
+         */
+    }
+}
+
+class Lampada implements Dispositivo
+{
+    function ligar() 
+    { 
+        // 
+    }
+    
+    function desligar() 
+    { 
         //
     }
 
-    function informarCasa()
+    function acionar()
     {
-        echo "Eu, $this->nome, moro na rua: {$this->casa->getRua()}, numero: {$this->casa->getNumero()} </br>";
+        /**
+         * Toda lógica para saber se a lampada irá apagar ou desligar
+         * Se status == true, ligar()
+         * se status == false, desligar
+         */
     }
 }
 
-class Banco
+class Interruptor
 {
-    public function depositar(Pessoa $pessoa, $valor)
+    function acionar(Dispositivo $dispositivo)
     {
-        echo "{$pessoa->getNome()}, depositou $valor em sua conta.</br>";
+        $dispositivo->acionar();
     }
 }
-
-class Casa
-{
-    private $rua;
-    private $numero;
-    private $cor;
-    
-    function __construct($rua, $numero, $cor)
-    {
-        $this->rua = $rua;
-        $this->numero = $numero;
-        $this->cor = $cor;
-    }
-
-    function getNumero()
-    {
-        return $this->numero;
-    }
-
-    function getRua()
-    {
-        return $this->rua;
-    }
-}
-
-// TESTE SIMPLES
-
-// $casa = new Casa("7 de Setembro", "2013", "Verde");
-// $pessoa = new Pessoa("Roberto", 23, $casa);
-
-// $pessoa->informarCasa();
-
-// $banco = new Banco();
-
-// $banco->depositar($pessoa, 40.00);

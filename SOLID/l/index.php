@@ -1,15 +1,16 @@
 <?php
-    $raiz = "s/";
+    $raiz = "l/";
     $pastas = [
         $raiz."sem" => "Sem SRP",
         $raiz."com" => "Com SRP",
     ];
 ?>
 <h2>
-    SRP - Single Responsibility Principle
+LSP - Liskov Substitution Principle
+
 </h2>
 <p>
-    Princípio da Responsabilidade Única - Uma classe deve ter um, e somente um, motivo para mudar.
+Princípio da substituição de Liskov - As classes derivadas devem ser substituíveis por suas classes bases.
 </p>
 
 Exemplos:

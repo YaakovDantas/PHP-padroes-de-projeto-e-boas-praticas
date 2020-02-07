@@ -1,157 +1,115 @@
-<h3>Princípio da Responsabilidade Única - (S)</h3>
-<p>Seguindo o conceito da responsabilidade única, agora uma Pessoa só tem ações referente a uma pessoa.</p>
-<p>Criando as Classes Banco e Casa, as responsabilidades de depositar, ou saber dados da casa, estão separados por suas Respectivas Classes.</p>
-<h4>Classe Pessoa</h4>
+<h3>Princípio Aberto/Fechado - (O)</h3>
+<p>Seguindo o conceito da do Aberto/Fechado, agora cada tipo de Email deve ser responsável por saber formatar a mensagem antes de enviar.</p>
+<p>Criando uma Interface Email, com a função enviar, todos os Tipos de Email devem ser capazes de enviar seus emails por contra própria.</p>
+<h4>Interface Email e suas Classes Tipos</h4>
 <pre>
-class Pessoa
+
+//
+interface Email 
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    
-    function __construct($nome, $idade, Casa $casa)
+    function enviar($assunto, $mensagem);
+}
+
+//
+class EmailCript implements Email
+{
+    function enviar($assunto, $mensagem)
     {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->casa = $casa;
+        /**
+         * Logica para enviar email criptografado
+         */
     }
 
-    function getNome()
+    function criarCript()
     {
-        return $this->nome;
+        // logica de criptografia
     }
 
-    function andar()
+    /**
+     * Outros métodos
+     */
+}
+
+//
+class EmailTexto implements Email
+{
+    function enviar($assunto, $mensagem)
     {
-        //
+        /**
+         * Logica para enviar email de texto
+         */
     }
 
-    function falar()
+    function removerFormatacao()
     {
-        //
+        // logica de remover formatação de texto
     }
 
-    function informarCasa()
-    {
-        echo "Eu, $this->nome, moro na rua: {$this->casa->getRua()}, numero: {$this->casa->getNumero()} </br>";
-    }
+    /**
+     * Outros métodos
+     */
 }
 </pre>
 
-<h4>Classe Banco</h4>
+<h4>Cliente</h4>
 
 <pre>
-class Banco
-{
-    public function depositar(Pessoa $pessoa, $valor)
-    {
-        echo "{$pessoa->getNome()}, depositou $valor em sua conta.</br>";
-    }
-}
+$mensagem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+$assunto = "Lorem";
 
-</pre>
+$email = new EmailTexto();
+$email->enviar($assunto, $email); // toda responsabilidade de enviar um email está dentro da classe EmailTexto
 
-<h4>Classe Casa</h4>
-<pre>
-class Casa
-{
-    private $rua;
-    private $numero;
-    private $cor;
-    
-    function __construct($rua, $numero, $cor)
-    {
-        $this->rua = $rua;
-        $this->numero = $numero;
-        $this->cor = $cor;
-    }
-
-    function getNumero()
-    {
-        return $this->numero;
-    }
-
-    function getRua()
-    {
-        return $this->rua;
-    }
-}
 </pre>
 <?php 
 
-class Pessoa
+interface Email 
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    
-    function __construct($nome, $idade, Casa $casa)
-    {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->casa = $casa;
-    }
-
-    function getNome()
-    {
-        return $this->nome;
-    }
-
-    function andar()
-    {
-        //
-    }
-
-    function falar()
-    {
-        //
-    }
-
-    function informarCasa()
-    {
-        echo "Eu, $this->nome, moro na rua: {$this->casa->getRua()}, numero: {$this->casa->getNumero()} </br>";
-    }
+    function enviar($assunto, $mensagem);
 }
 
-class Banco
+class EmailCript implements Email
 {
-    public function depositar(Pessoa $pessoa, $valor)
+    function enviar($assunto, $mensagem)
     {
-        echo "{$pessoa->getNome()}, depositou $valor em sua conta.</br>";
+        /**
+         * Logica para enviar email criptografado
+         */
     }
+
+    function criarCript()
+    {
+        // logica de criptografia
+    }
+
+    /**
+     * Outros métodos
+     */
 }
 
-class Casa
+class EmailTexto implements Email
 {
-    private $rua;
-    private $numero;
-    private $cor;
-    
-    function __construct($rua, $numero, $cor)
+    function enviar($assunto, $mensagem)
     {
-        $this->rua = $rua;
-        $this->numero = $numero;
-        $this->cor = $cor;
+        /**
+         * Logica para enviar email de texto
+         */
     }
 
-    function getNumero()
+    function removerFormatacao()
     {
-        return $this->numero;
+        // logica de remover formatação de texto
     }
 
-    function getRua()
-    {
-        return $this->rua;
-    }
+    /**
+     * Outros métodos
+     */
 }
 
-// TESTE SIMPLES
+// EXEMPLO DE TESTE, MAS PRA FUNCIONAR PRECISA DE FATO FAZER A LOGICA DAS FUNÇÔES
 
-// $casa = new Casa("7 de Setembro", "2013", "Verde");
-// $pessoa = new Pessoa("Roberto", 23, $casa);
+// $mensagem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+// $assunto = "Lorem";
 
-// $pessoa->informarCasa();
-
-// $banco = new Banco();
-
-// $banco->depositar($pessoa, 40.00);
+// $email = new EmailTexto();
+// $email->enviar($assunto, $email);

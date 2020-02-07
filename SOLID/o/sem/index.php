@@ -1,64 +1,145 @@
-<h3>SEM = Princípio da Responsabilidade Única - (S)</h3>
-<p>Temos uma pessoa que ela tem: nome, idade, cor da casa, e dados bancários. </p>
+
+<h3>SEM = Princípio Aberto/Fechado - (O)</h3>
+<p>Temos uma classe que Envia Emails, onde ela tem muitos IF's dentro do Método 'EnviarEmail()'. Cada IF representa um TIPO de email. </p>
 <p>
-Está forma de código não está correta, pois a Pessoa não precisa saber como fazer um depósito ou saber a Cor da sua casa, para ambos os casos, deveriam ter refatorações criando Classes como: Conta, Casa.
+Está forma de código não está correta, pois a Classe EnviaEmail não vai escalar bem com a médida que novos tipos de Email forem criadas.
 </p>
 <p>
-Onde cada uma delas teria a responsabilidade correta e única
+O ideal é cada Tipo de Email saber enviar sua própria regra de enviarEmail.
 </p>
-Veja solução seguindo o principio <b>S</b> <a href="<?=$raiz?>com">aqui</a>
+Veja solução seguindo o principio <b>O</b> <a href="com">aqui</a>
 <pre>
-class Pessoa
+class EmailCript
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    private $dadosConta;
-    
-    function __construct($nome, $idade, $cor, $dadosConta)
+    function __construct($tipo)
     {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->corDaCasa = $cor;
-        $this->dadosConta = $dadosConta;
+        $this->tipo = $tipo;
     }
 
-    function pegarCorDaCasa()
+    function getTipo()
     {
-        return $this->corDaCasa;
+        return $this->tipo;
     }
 
-    function depositarNoBanco($valor)
+    /**
+     * Outros métodos
+     */
+}
+
+class EmailTexto
+{
+    function __construct($tipo)
     {
-        // salvando no banco um valor
+        $this->tipo = $tipo;
+    }
+
+    function getTipo()
+    {
+        return $this->tipo;
+    }
+
+    /**
+     * Outros métodos
+     */
+}
+
+
+
+class EnviarEmail
+{
+    function Enviar($assunto, $mensagem, $email)
+    {
+        $mensagem = null;
+        if ($email->getTipo() === 'CRIPT') {
+            $mensagem = $this->criarCript($mensagem);
+        } else if ($email->getTipo() === 'TEXTO') {
+            $mensagem = $this->removerFormatacao($mensagem);
+        }
+
+        $this->EnviarMensagem($assunto, $mensagem);
+    }
+
+    function EnviarMensagem($assunto, $mensagem)
+    {
+        // de fato o email será enviado
+    }
+
+    function criarCript($mensagem)
+    {
+        // criptografar
+    }
+
+    function removerFormatacao($mensagem)
+    {
+        // tirar formatação
     }
 }
 </pre>
 
 <?php 
 
-class Pessoa
+class EmailCript
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    private $dadosConta;
-    
-    function __construct($nome, $idade, $cor, $dadosConta)
+    function __construct($tipo)
     {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->corDaCasa = $cor;
-        $this->dadosConta = $dadosConta;
+        $this->tipo = $tipo;
     }
 
-    function pegarCorDaCasa()
+    function getTipo()
     {
-        return $this->corDaCasa;
+        return $this->tipo;
     }
 
-    function depositarNoBanco($valor)
+    /**
+     * Outros métodos
+     */
+}
+
+class EmailTexto
+{
+    function __construct($tipo)
     {
-        // salvando no banco um valor (toda lógica aqui)
+        $this->tipo = $tipo;
+    }
+
+    function getTipo()
+    {
+        return $this->tipo;
+    }
+
+    /**
+     * Outros métodos
+     */
+}
+
+
+
+class EnviarEmail
+{
+    function Enviar($assunto, $mensagem, $email)
+    {
+        $mensagem = null;
+        if ($email->getTipo() === 'CRIPT') {
+            $mensagem = $this->criarCript($mensagem);
+        } else if ($email->getTipo() === 'TEXTO') {
+            $mensagem = $this->removerFormatacao($mensagem);
+        }
+
+        $this->EnviarMensagem($assunto, $mensagem);
+    }
+
+    function EnviarMensagem($assunto, $mensagem)
+    {
+        // de fato o email será enviado
+    }
+
+    function criarCript($mensagem)
+    {
+        // criptografar
+    }
+
+    function removerFormatacao($mensagem)
+    {
+        // tirar formatação
     }
 }

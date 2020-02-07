@@ -1,157 +1,111 @@
-<h3>Princípio da Responsabilidade Única - (S)</h3>
-<p>Seguindo o conceito da responsabilidade única, agora uma Pessoa só tem ações referente a uma pessoa.</p>
-<p>Criando as Classes Banco e Casa, as responsabilidades de depositar, ou saber dados da casa, estão separados por suas Respectivas Classes.</p>
-<h4>Classe Pessoa</h4>
+<h3>Princípio da Substituição de Liskov - (L)</h3>
+<p>Seguindo o conceito de Liskov, uma forma de não quebrar o contrato, seria criar uma Interface FiguraGeometrica com o metodo Area().</p>
+<p>Assim Quadrado e Retangulo iriam implementar a Interface e sua função, e cada um receberia sua altura/largura para retangulo e quadrado só o lado.</p>
+
+<h4>Interface Figura, Classe Quadrado/Retangulo</h4>
 <pre>
-class Pessoa
+
+//
+interface FiguraGeometrica
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    
-    function __construct($nome, $idade, Casa $casa)
+    function Area();
+}
+
+//
+class Retangulo implements FiguraGeometrica
+{
+    function setAltura($altura)
     {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->casa = $casa;
+        $this->altura = $altura;
     }
 
-    function getNome()
+    function setLargura($largura)
     {
-        return $this->nome;
+        $this->largura = $largura;
     }
 
-    function andar()
+    function Area()
     {
-        //
+        return $this->largura * $this->altura;
+    }
+}
+
+//
+class Quadrado extends Retangulo
+{
+    function setLado($lado)
+    {
+        $this->lado = $lado;
     }
 
-    function falar()
+    function Area()
     {
-        //
-    }
-
-    function informarCasa()
-    {
-        echo "Eu, $this->nome, moro na rua: {$this->casa->getRua()}, numero: {$this->casa->getNumero()} </br>";
+        return $this->lado * $this->lado;
     }
 }
 </pre>
 
-<h4>Classe Banco</h4>
+<h4>Cliente</h4>
 
 <pre>
-class Banco
-{
-    public function depositar(Pessoa $pessoa, $valor)
-    {
-        echo "{$pessoa->getNome()}, depositou $valor em sua conta.</br>";
-    }
-}
+
+$quadrado = new Quadrado();
+$quadrado->setLado(4);
+echo "{$quadrado->Area()}";
+
+$retangulo = new Retangulo();
+$retangulo->setAltura(5);
+$retangulo->setLargura(10);
+echo "{$retangulo->Area()}";
 
 </pre>
 
-<h4>Classe Casa</h4>
-<pre>
-class Casa
-{
-    private $rua;
-    private $numero;
-    private $cor;
-    
-    function __construct($rua, $numero, $cor)
-    {
-        $this->rua = $rua;
-        $this->numero = $numero;
-        $this->cor = $cor;
-    }
-
-    function getNumero()
-    {
-        return $this->numero;
-    }
-
-    function getRua()
-    {
-        return $this->rua;
-    }
-}
-</pre>
 <?php 
 
-class Pessoa
+interface FiguraGeometrica
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    
-    function __construct($nome, $idade, Casa $casa)
+    function Area();
+}
+
+class Retangulo implements FiguraGeometrica
+{
+    function setAltura($altura)
     {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->casa = $casa;
+        $this->altura = $altura;
     }
 
-    function getNome()
+    function setLargura($largura)
     {
-        return $this->nome;
+        $this->largura = $largura;
     }
 
-    function andar()
+    function Area()
     {
-        //
-    }
-
-    function falar()
-    {
-        //
-    }
-
-    function informarCasa()
-    {
-        echo "Eu, $this->nome, moro na rua: {$this->casa->getRua()}, numero: {$this->casa->getNumero()} </br>";
+        return $this->largura * $this->altura;
     }
 }
 
-class Banco
+class Quadrado extends Retangulo
 {
-    public function depositar(Pessoa $pessoa, $valor)
+    function setLado($lado)
     {
-        echo "{$pessoa->getNome()}, depositou $valor em sua conta.</br>";
+        $this->lado = $lado;
+    }
+
+    function Area()
+    {
+        return $this->lado * $this->lado;
     }
 }
 
-class Casa
-{
-    private $rua;
-    private $numero;
-    private $cor;
-    
-    function __construct($rua, $numero, $cor)
-    {
-        $this->rua = $rua;
-        $this->numero = $numero;
-        $this->cor = $cor;
-    }
+// TESTE DE EXEMPLO
 
-    function getNumero()
-    {
-        return $this->numero;
-    }
+// $quadrado = new Quadrado();
+// $quadrado->setLado(4);
+// echo "{$quadrado->Area()}</br>";
 
-    function getRua()
-    {
-        return $this->rua;
-    }
-}
 
-// TESTE SIMPLES
-
-// $casa = new Casa("7 de Setembro", "2013", "Verde");
-// $pessoa = new Pessoa("Roberto", 23, $casa);
-
-// $pessoa->informarCasa();
-
-// $banco = new Banco();
-
-// $banco->depositar($pessoa, 40.00);
+// $retangulo = new Retangulo();
+// $retangulo->setAltura(5);
+// $retangulo->setLargura(10);
+// echo "{$retangulo->Area()}</br>";

@@ -1,64 +1,99 @@
-<h3>SEM = Princípio da Responsabilidade Única - (S)</h3>
-<p>Temos uma pessoa que ela tem: nome, idade, cor da casa, e dados bancários. </p>
+<h3>SEM = Princípio da Segregação de Interfaces - (I)</h3>
+<p>Temos uma Interface ComerBeber, nela tem metodos a serem implementados: comer() e beber(). </p>
+<p>Se um Classe de açai implementa essa Interface, é o certo, pois um açãi tem parte de comer e parte de beber.</p>
+<p>Porém uma Classe de Banana e Suco, implementam essa Interface, só um dos métodos será realmente usado por elas.</p>
 <p>
-Está forma de código não está correta, pois a Pessoa não precisa saber como fazer um depósito ou saber a Cor da sua casa, para ambos os casos, deveriam ter refatorações criando Classes como: Conta, Casa.
+Está forma de código não está correta, estamos forçando as Classes Banana e Suco, terem métodos que não fazem sentido, e eles deveram ser implementados por conta da Interface.
 </p>
-<p>
-Onde cada uma delas teria a responsabilidade correta e única
-</p>
-Veja solução seguindo o principio <b>S</b> <a href="<?=$raiz?>com">aqui</a>
+Veja solução seguindo o principio <b>I</b> <a href="<?=$raiz?>com">aqui</a>
 <pre>
-class Pessoa
+
+interface ComeBebe
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    private $dadosConta;
-    
-    function __construct($nome, $idade, $cor, $dadosConta)
-    {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->corDaCasa = $cor;
-        $this->dadosConta = $dadosConta;
+    function comer();
+    function beber();
+}
+
+\\
+class Acai implements ComeBebe
+{
+    function comer(){
+        // Acai tem parte que come, OK
     }
 
-    function pegarCorDaCasa()
+    function beber()
     {
-        return $this->corDaCasa;
+        // Acai tem parte que bebe, OK
+    }
+}
+
+\\
+class Suco implements ComeBebe
+{
+    function comer(){
+        // Suco não é de comer, FALHA
     }
 
-    function depositarNoBanco($valor)
+    function beber()
     {
-        // salvando no banco um valor
+        // Suco só tem parte que bebe, OK
+    }
+}
+
+\\
+class Banana implements ComeBebe
+{
+    function comer(){
+        // Banana é de comer, OK
+    }
+
+    function beber()
+    {
+        // Banana não tem nada de beber, Falha
     }
 }
 </pre>
 
 <?php 
 
-class Pessoa
+interface ComeBebe
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    private $dadosConta;
-    
-    function __construct($nome, $idade, $cor, $dadosConta)
-    {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->corDaCasa = $cor;
-        $this->dadosConta = $dadosConta;
+    function comer();
+    function beber();
+}
+
+class Acai implements ComeBebe
+{
+    function comer(){
+        // Acai tem parte que come, OK
     }
 
-    function pegarCorDaCasa()
+    function beber()
     {
-        return $this->corDaCasa;
+        // Acai tem parte que bebe, OK
+    }
+}
+
+class Suco implements ComeBebe
+{
+    function comer(){
+        // Suco não é de comer, FALHA
     }
 
-    function depositarNoBanco($valor)
+    function beber()
     {
-        // salvando no banco um valor (toda lógica aqui)
+        // Suco só tem parte que bebe, OK
+    }
+}
+
+class Banana implements ComeBebe
+{
+    function comer(){
+        // Banana é de comer, OK
+    }
+
+    function beber()
+    {
+        // Banana não tem nada de beber, Falha
     }
 }

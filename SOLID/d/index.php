@@ -1,15 +1,15 @@
 <?php
-    $raiz = "s/";
+    $raiz = "d/";
     $pastas = [
         $raiz."sem" => "Sem SRP",
         $raiz."com" => "Com SRP",
     ];
 ?>
 <h2>
-    SRP - Single Responsibility Principle
+    DIP - Dependency inversion principle
 </h2>
 <p>
-    Princípio da Responsabilidade Única - Uma classe deve ter um, e somente um, motivo para mudar.
+    Princípio da inversão de dependência - Dependa de abstrações e não de implementações.
 </p>
 
 Exemplos:

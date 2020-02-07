@@ -6,7 +6,7 @@ Está forma de código não está correta, pois a Pessoa não precisa saber como
 <p>
 Onde cada uma delas teria a responsabilidade correta e única
 </p>
-Veja solução seguindo o principio <b>S</b> <a href="<?=$raiz?>com">aqui</a>
+Veja solução seguindo o principio <b>S</b> <a href="com">aqui</a>
 <pre>
 class Pessoa
 {

@@ -1,157 +1,92 @@
-<h3>Princípio da Responsabilidade Única - (S)</h3>
-<p>Seguindo o conceito da responsabilidade única, agora uma Pessoa só tem ações referente a uma pessoa.</p>
-<p>Criando as Classes Banco e Casa, as responsabilidades de depositar, ou saber dados da casa, estão separados por suas Respectivas Classes.</p>
-<h4>Classe Pessoa</h4>
+<h3>Princípio da Segregação de Interfaces - (I)</h3>
+<p>Seguindo o conceito segregação de interface, agora exitem duas interfaces, Come e Bebe, com seus respectivos métodos: comer(), beber().</p>
+<p>Dessa forma apenas as classes que são de comer e beber, como Acai, podem implementar as duas interfaces, e Suco e Banana, só implementam o que é necessário para elas.</p>
+<h4>Interfaces</h4>
 <pre>
-class Pessoa
+interface Come
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    
-    function __construct($nome, $idade, Casa $casa)
-    {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->casa = $casa;
-    }
+    function comer();
+}
 
-    function getNome()
-    {
-        return $this->nome;
-    }
-
-    function andar()
-    {
-        //
-    }
-
-    function falar()
-    {
-        //
-    }
-
-    function informarCasa()
-    {
-        echo "Eu, $this->nome, moro na rua: {$this->casa->getRua()}, numero: {$this->casa->getNumero()} </br>";
-    }
+\\
+interface Bebe
+{
+    function beber();
 }
 </pre>
 
-<h4>Classe Banco</h4>
+<h4>Classes</h4>
 
 <pre>
-class Banco
+
+class Acai implements Come, Bebe
 {
-    public function depositar(Pessoa $pessoa, $valor)
+    function comer(){
+        // Acai tem parte que come, OK
+    }
+
+    function beber()
     {
-        echo "{$pessoa->getNome()}, depositou $valor em sua conta.</br>";
+        // Acai tem parte que bebe, OK
+    }
+}
+
+\\
+class Suco implements Bebe
+{
+    function beber()
+    {
+        // Suco só tem parte que bebe, OK
+    }
+}
+
+\\
+class Banana implements ComeBebe
+{
+    function comer()
+    {
+        // Banana é de comer, OK
     }
 }
 
 </pre>
 
-<h4>Classe Casa</h4>
-<pre>
-class Casa
-{
-    private $rua;
-    private $numero;
-    private $cor;
-    
-    function __construct($rua, $numero, $cor)
-    {
-        $this->rua = $rua;
-        $this->numero = $numero;
-        $this->cor = $cor;
-    }
-
-    function getNumero()
-    {
-        return $this->numero;
-    }
-
-    function getRua()
-    {
-        return $this->rua;
-    }
-}
-</pre>
 <?php 
 
-class Pessoa
+interface Come
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    
-    function __construct($nome, $idade, Casa $casa)
-    {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->casa = $casa;
+    function comer();
+}
+
+interface Bebe
+{
+    function beber();
+}
+
+class Acai implements Come, Bebe
+{
+    function comer(){
+        // Acai tem parte que come, OK
     }
 
-    function getNome()
+    function beber()
     {
-        return $this->nome;
-    }
-
-    function andar()
-    {
-        //
-    }
-
-    function falar()
-    {
-        //
-    }
-
-    function informarCasa()
-    {
-        echo "Eu, $this->nome, moro na rua: {$this->casa->getRua()}, numero: {$this->casa->getNumero()} </br>";
+        // Acai tem parte que bebe, OK
     }
 }
 
-class Banco
+class Suco implements Bebe
 {
-    public function depositar(Pessoa $pessoa, $valor)
+    function beber()
     {
-        echo "{$pessoa->getNome()}, depositou $valor em sua conta.</br>";
+        // Suco só tem parte que bebe, OK
     }
 }
 
-class Casa
+class Banana implements ComeBebe
 {
-    private $rua;
-    private $numero;
-    private $cor;
-    
-    function __construct($rua, $numero, $cor)
+    function comer()
     {
-        $this->rua = $rua;
-        $this->numero = $numero;
-        $this->cor = $cor;
-    }
-
-    function getNumero()
-    {
-        return $this->numero;
-    }
-
-    function getRua()
-    {
-        return $this->rua;
+        // Banana é de comer, OK
     }
 }
-
-// TESTE SIMPLES
-
-// $casa = new Casa("7 de Setembro", "2013", "Verde");
-// $pessoa = new Pessoa("Roberto", 23, $casa);
-
-// $pessoa->informarCasa();
-
-// $banco = new Banco();
-
-// $banco->depositar($pessoa, 40.00);

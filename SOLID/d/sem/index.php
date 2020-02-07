@@ -1,64 +1,132 @@
-<h3>SEM = Princípio da Responsabilidade Única - (S)</h3>
-<p>Temos uma pessoa que ela tem: nome, idade, cor da casa, e dados bancários. </p>
+<h3>SEM = Princípio da inversão de dependência - (D)</h3>
+<p>Temos uma Classe Interruptor, nela recebemos um Ventilador, e precisamos acessar seu atributo OnOff, para saber se está ligado(true) ou desligado(false). </p>
 <p>
-Está forma de código não está correta, pois a Pessoa não precisa saber como fazer um depósito ou saber a Cor da sua casa, para ambos os casos, deveriam ter refatorações criando Classes como: Conta, Casa.
+Para depois chamar o método do Ventilador Ligar(), ou Desligar().
 </p>
 <p>
-Onde cada uma delas teria a responsabilidade correta e única
+Se existir depois uma Lampada, teriamos que ter outro método em Interruptor, para saber ligar uma lampada.
 </p>
-Veja solução seguindo o principio <b>S</b> <a href="<?=$raiz?>com">aqui</a>
+<p>Está não é uma boa prática, pois a classe Interruptor está dependendo de uma Classe Concreta, para fazer suas Operações. O ideal seria depender de alguma Abstração.</p>
+
+Veja solução seguindo o principio <b>D</b> <a href="<?=$raiz?>com">aqui</a>
 <pre>
-class Pessoa
+
+class Ventilador
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    private $dadosConta;
+    function getOnOff()
+    {
+        //
+    }
+  
+    function Ligar() 
+    { 
+        // 
+    }
     
-    function __construct($nome, $idade, $cor, $dadosConta)
-    {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->corDaCasa = $cor;
-        $this->dadosConta = $dadosConta;
-    }
-
-    function pegarCorDaCasa()
-    {
-        return $this->corDaCasa;
-    }
-
-    function depositarNoBanco($valor)
-    {
-        // salvando no banco um valor
+    function Desligar() 
+    { 
+        //
     }
 }
+
+\\
+class Lampada
+{
+    function getStatus()
+    {
+        //
+    }
+  
+    function Ascender() 
+    { 
+        // 
+    }
+    
+    function Apagar() 
+    { 
+        //
+    }
+}
+
+\\
+class Interruptor
+{
+    function AcionarVentilador(Ventilador $ventilador)
+    {
+        if($ventilador->getOnOff()) {
+            $ventilador->Ligar();
+        } else {
+            $ventilador->Desligar();
+        }
+    }
+
+    function AcionarLampada(Lampada $lampada)
+    {
+        if($lampada->getStatus()) {
+            $lampada->Apagar();
+        } else {
+            $lampada->Ascender();
+        }
+    }
+}
+
 </pre>
 
 <?php 
 
-class Pessoa
+class Ventilador
 {
-    private $nome;
-    private $idade;
-    private $corDaCasa;
-    private $dadosConta;
+    function getOnOff()
+    {
+        //
+    }
+  
+    function Ligar() 
+    { 
+        // 
+    }
     
-    function __construct($nome, $idade, $cor, $dadosConta)
+    function Desligar() 
+    { 
+        //
+    }
+}
+
+class Lampada
+{
+    function getStatus()
     {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->corDaCasa = $cor;
-        $this->dadosConta = $dadosConta;
+        //
+    }
+  
+    function Ascender() 
+    { 
+        // 
+    }
+    
+    function Apagar() 
+    { 
+        //
+    }
+}
+
+class Interruptor
+{
+    function AcionarVentilador(Ventilador $ventilador)
+    {
+        if($ventilador->getOnOff()) {
+            $ventilador->Ligar();
+        } else {
+            $ventilador->Desligar();
+        }
     }
 
-    function pegarCorDaCasa()
+    function AcionarLampada(Lampada $lampada)
     {
-        return $this->corDaCasa;
-    }
-
-    function depositarNoBanco($valor)
-    {
-        // salvando no banco um valor (toda lógica aqui)
+        if($lampada->getStatus()) {
+            $lampada->Apagar();
+        } else {
+            $lampada->Ascender();
+        }
     }
 }

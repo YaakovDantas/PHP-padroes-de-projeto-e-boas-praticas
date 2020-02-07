@@ -1,15 +1,15 @@
 <?php
-    $raiz = "s/";
+    $raiz = "i/";
     $pastas = [
         $raiz."sem" => "Sem SRP",
         $raiz."com" => "Com SRP",
     ];
 ?>
 <h2>
-    SRP - Single Responsibility Principle
+Princípio da Segregação de Interfaces
 </h2>
 <p>
-    Princípio da Responsabilidade Única - Uma classe deve ter um, e somente um, motivo para mudar.
+Muitas interfaces específicas são melhores do que uma interface única geral.
 </p>
 
 Exemplos:
