@@ -6,11 +6,9 @@
 
 ## Para testar os exemplos, faça um clone dele.
 
-## Entre na pasta de padrão que desejar via terminal e digite o comando
+## Entre na pasta raiz via terminal e digite o comando
 
 ```
-cd <padrão>
-
 php -S localhost:8080
 ```
 
@@ -37,6 +35,12 @@ SOLID
 - [Thiago-Aragao-Blog](https://medium.com/thiago-aragao/solid-princ%C3%ADpios-da-programa%C3%A7%C3%A3o-orientada-a-objetos-ba7e31d8fb25)
 
 - [Wikipedia](https://pt.wikipedia.org/wiki/SOLID)
+
+SERVICE/REPOSITORY
+
+- [Mauricio Rodrigues](https://medium.com/laraveltips/voc%C3%AA-entende-repository-pattern-voc%C3%AA-est%C3%A1-certo-disso-d739ecaf544e)
+
+- [Felipe Lucio](https://felipelucioquirino.wordpress.com/2012/07/17/padrao-de-projeto-repository/)
 
 
 ###### A motivação de criar todos esses padrões de projeto foram com a intenção de estudo próprio e crescimento como profissional/desenvolvedor, qualquer má definição ou exemplo, esteja livre para compartilhar seu conhecimento com a comunidade.
