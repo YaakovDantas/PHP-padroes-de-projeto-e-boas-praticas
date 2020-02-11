@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/composite/';
+$raiz = './composite/';
 ?>
 <h3>Composite</h3>
 <h4>Definição:</h4>

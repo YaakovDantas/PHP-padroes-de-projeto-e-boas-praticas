@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/memento/';
+$raiz = './memento/';
 ?>
 <h3>Memento</h3>
 <h4>Definição:</h4>

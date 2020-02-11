@@ -31,7 +31,7 @@ class Retangulo implements FiguraGeometrica
 }
 
 //
-class Quadrado extends Retangulo
+class Quadrado implements FiguraGeometrica
 {
     function setLado($lado)
     {
@@ -85,7 +85,7 @@ class Retangulo implements FiguraGeometrica
     }
 }
 
-class Quadrado extends Retangulo
+class Quadrado implements FiguraGeometrica
 {
     function setLado($lado)
     {

@@ -50,5 +50,10 @@ M-V-C
 
 - [YouTube](https://www.youtube.com/watch?v=dTVVa2gfht8&list=PLF206E906175C7E07&index=28&t=0s)
 
+DAO
+
+- [Wikipedia](https://pt.wikipedia.org/wiki/Objeto_de_acesso_a_dados)
+
+- [Devmedia](https://www.devmedia.com.br/dao-pattern-persistencia-de-dados-utilizando-o-padrao-dao/30999)
 
 ###### A motivação de criar todos esses padrões de projeto foram com a intenção de estudo próprio e crescimento como profissional/desenvolvedor, qualquer má definição ou exemplo, esteja livre para compartilhar seu conhecimento com a comunidade.

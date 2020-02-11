@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/templateMethod/';
+$raiz = './templateMethod/';
 ?>
 <h3>Template Method</h3>
 <h4>Definição:</h4>

@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/prototype/';
+$raiz = './prototype/';
 ?>
 <h3>Prototype</h3>
 <h4>Definição:</h4>

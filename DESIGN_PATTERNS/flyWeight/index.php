@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/flyWeight/';
+$raiz = './flyWeight/';
 ?>
 <h3>Flyweight</h3>
 <h4>Definição:</h4>

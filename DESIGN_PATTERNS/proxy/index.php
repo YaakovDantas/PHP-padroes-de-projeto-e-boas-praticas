@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/proxy/';
+$raiz = './proxy/';
 ?>
 <h3>Proxy</h3>
 <h4>Definição:</h4>

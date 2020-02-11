@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/bridge/';
+$raiz = './bridge/';
 ?>
 <h3>Bridge</h3>
 <h4>Definição:</h4>

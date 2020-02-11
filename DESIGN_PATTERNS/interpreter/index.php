@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/interpreter/';
+$raiz = './interpreter/';
 ?>
 <h3>Interpreter</h3>
 <h4>Definição:</h4>

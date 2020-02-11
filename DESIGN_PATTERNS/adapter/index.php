@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/adapter/';
+$raiz = './adapter/';
 ?>
 <h3>Adapter</h3>
 <h4>Definição:</h4>

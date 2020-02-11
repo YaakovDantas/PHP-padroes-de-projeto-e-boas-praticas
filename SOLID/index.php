@@ -1,11 +1,11 @@
 <?php
 
     $pastas = [
-        "s" => "<b>S</b>ingle Responsibility Principle",
-        "o" => "<b>O</b>pen / Cloed Principle",
-        "l" => "<b>L</b>iskov Substituition Principle",
-        "i" => "<b>I</b>nterface Segregation Principle",
-        "d" => "<b>D</b>ependency Inversion Principle"
+        "./SOLID/s" => "<b>S</b>ingle Responsibility Principle",
+        "./SOLID/o" => "<b>O</b>pen / Cloed Principle",
+        "./SOLID/l" => "<b>L</b>iskov Substituition Principle",
+        "./SOLID/i" => "<b>I</b>nterface Segregation Principle",
+        "./SOLID/d" => "<b>D</b>ependency Inversion Principle"
     ];
 ?>
 

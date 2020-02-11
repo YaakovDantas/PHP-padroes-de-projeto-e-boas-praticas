@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/strategy/';
+$raiz = './strategy/';
 ?>
 <h3>Strategy</h3>
 <h4>Definição:</h4>

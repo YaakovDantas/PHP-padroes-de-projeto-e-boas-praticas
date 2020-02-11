@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/observer/';
+$raiz = './observer/';
 ?>
 <h3>Observer</h3>
 <h4>Definição:</h4>

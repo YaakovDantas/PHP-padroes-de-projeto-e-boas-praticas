@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/decorator/';
+$raiz = './decorator/';
 ?>
 <h3>Decorator</h3>
 <h4>Definição:</h4>

@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/abstractFactory/';
+$raiz = './abstractFactory/';
 ?>
 <h3>Abstracy Factory</h3>
 <h4>Definição:</h4>

@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/singleton/';
+$raiz = './singleton/';
 ?>
 <h3>Singleton</h3>
 <h4>Definição:</h4>

@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/command/';
+$raiz = './command/';
 ?>
 <h3>Command</h3>
 <h4>Definição:</h4>

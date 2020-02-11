@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/factoryMethod/';
+$raiz = './factoryMethod/';
 ?>
 <h3>Factory Method</h3>
 <h4>Definição:</h4>

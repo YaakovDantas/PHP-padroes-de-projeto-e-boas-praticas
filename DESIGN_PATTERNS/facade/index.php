@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/facade/';
+$raiz = './facade/';
 ?>
 <h3>Façade</h3>
 <h4>Definição:</h4>

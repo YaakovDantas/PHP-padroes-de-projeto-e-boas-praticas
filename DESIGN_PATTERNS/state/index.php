@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/state/';
+$raiz = './state/';
 ?>
 <h3>State</h3>
 <h4>Definição:</h4>

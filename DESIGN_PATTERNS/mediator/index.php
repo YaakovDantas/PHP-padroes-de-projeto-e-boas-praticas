@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/mediator/';
+$raiz = './mediator/';
 ?>
 <h3>Mediator</h3>
 <h4>Definição:</h4>

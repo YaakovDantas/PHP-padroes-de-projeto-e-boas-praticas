@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/chainOfResponsibility/';
+$raiz = './chainOfResponsibility/';
 ?>
 <h3>Chain of Responsibility</h3>
 <h4>Definição:</h4>

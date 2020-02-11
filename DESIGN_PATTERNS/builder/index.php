@@ -1,6 +1,6 @@
 <?php 
 
-$raiz = '/builder/';
+$raiz = './builder/';
 ?>
 <h3>Builder</h3>
 <h4>Definição:</h4>

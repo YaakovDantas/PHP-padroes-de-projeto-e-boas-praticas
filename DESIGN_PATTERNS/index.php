@@ -4,77 +4,77 @@
 <h3>Tipos:</h3>
 <ol>
     <li>
-        <a href="/chainOfResponsibility">Chain of Responsibility</a>
+        <a href="./DESIGN_PATTERNS/chainOfResponsibility">Chain of Responsibility</a>
     </li>
 
     <li>
-        <a href="/state">State</a>
+        <a href="./DESIGN_PATTERNS/state">State</a>
     </li>
 
     <li>
-        <a href="/decorator">Decorator</a>
+        <a href="./DESIGN_PATTERNS/decorator">Decorator</a>
     </li>
 
     <li>
-        <a href="/templateMethod">Template Method</a>
+        <a href="./DESIGN_PATTERNS/templateMethod">Template Method</a>
     </li>
 
     <li>
-        <a href="/strategy">Strategy</a>
+        <a href="./DESIGN_PATTERNS/strategy">Strategy</a>
     </li>
     <li>
-        <a href="/builder">Builder</a>
+        <a href="./DESIGN_PATTERNS/builder">Builder</a>
     </li>
     <li>
-        <a href="/observer">Observer</a>
+        <a href="./DESIGN_PATTERNS/observer">Observer</a>
     </li>
     <li>
-        <a href="/abstractFactory">Abstract Factory</a>
+        <a href="./DESIGN_PATTERNS/abstractFactory">Abstract Factory</a>
     </li>
     <li>
-        <a href="/factoryMethod">Factory Method</a>
+        <a href="./DESIGN_PATTERNS/factoryMethod">Factory Method</a>
     </li>
     <li>
-        <a href="/memento">Memento</a>
+        <a href="./DESIGN_PATTERNS/memento">Memento</a>
     </li>
     <li>
-        <a href="/interpreter">Interpreter</a>
+        <a href="./DESIGN_PATTERNS/interpreter">Interpreter</a>
     </li>
     <li>
-        <a href="/visitor">Visitor</a>
+        <a href="./DESIGN_PATTERNS/visitor">Visitor</a>
     </li>
     <li>
-        <a href="/bridge">Bridge</a>
+        <a href="./DESIGN_PATTERNS/bridge">Bridge</a>
     </li>
     <li>
-        <a href="/adapter">Adapter</a>
+        <a href="./DESIGN_PATTERNS/adapter">Adapter</a>
     </li>
     <li>
-        <a href="/command">Command</a>
+        <a href="./DESIGN_PATTERNS/command">Command</a>
     </li>
     <li>
-        <a href="/facade">Facade</a>
+        <a href="./DESIGN_PATTERNS/facade">Facade</a>
     </li>
     <li>
-        <a href="/singleton">Singleton</a>
+        <a href="./DESIGN_PATTERNS/singleton">Singleton</a>
     </li>
     <li>
-        <a href="/prototype">Prototype</a>
+        <a href="./DESIGN_PATTERNS/prototype">Prototype</a>
     </li>
     <li>
-        <a href="/composite">Composite</a>
+        <a href="./DESIGN_PATTERNS/composite">Composite</a>
     </li>
     <li>
-        <a href="/flyWeight">FlyWeight</a>
+        <a href="./DESIGN_PATTERNS/flyWeight">FlyWeight</a>
     </li>
     <li>
-        <a href="/proxy">Proxy</a>
+        <a href="./DESIGN_PATTERNS/proxy">Proxy</a>
     </li>
     <li>
-        <a href="/iterator">Iterator</a>
+        <a href="./DESIGN_PATTERNS/iterator">Iterator</a>
     </li>
     <li>
-        <a href="/mediator">Mediator</a>
+        <a href="./DESIGN_PATTERNS/mediator">Mediator</a>
     </li>
 </ol>
 
