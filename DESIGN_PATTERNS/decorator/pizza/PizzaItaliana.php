@@ -5,13 +5,8 @@ class PizzaItaliana extends PizzaBase
         parent::__construct($outraPizza);
     }
 
-    public function addQueijo()
-    {
-        return "Colocando cheddar. <br />";
-    }
-
-    public function addRecheio()
-    {
-        return "Colocando manjericão. <br />";
+    public function fazerPizza(){
+        echo 'Pizza de Italiana criada. <br/>';
+        echo $this->completarComOutraPizza();
     }
 }

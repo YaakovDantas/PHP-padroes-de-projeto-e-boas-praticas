@@ -7,13 +7,8 @@ class PizzaQueijo extends PizzaBase
         parent::__construct($outraPizza);
     }
 
-    public function addQueijo()
-    {
-        return 'Queijo prato adicionado. <br/>';
-    }
-    
-    public function addRecheio()
-    {
-        return 'Recheio fino adicionado. <br/>';
-    }   
+    public function fazerPizza(){
+        echo 'Queijo prato adicionado. <br/>';
+        echo $this->completarComOutraPizza();
+    } 
 }

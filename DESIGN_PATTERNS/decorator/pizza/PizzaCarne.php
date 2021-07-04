@@ -7,13 +7,8 @@ class PizzaCarne extends PizzaBase
         parent::__construct($outraPizza);
     }
 
-    public function addQueijo()
-    {
-        return 'Provolone foi adicionado. <br/>';
+    public function fazerPizza(){
+        echo 'Pizza de carne criada. <br/>';
+        echo $this->completarComOutraPizza();
     }
-    
-    public function addRecheio()
-    {
-        return 'Picanha adicionada. <br/>';
-    }   
 }

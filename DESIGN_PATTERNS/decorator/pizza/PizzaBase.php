@@ -8,16 +8,11 @@ abstract class PizzaBase implements Pizza
         $this->outraPizza = $outraPizza;
     }
 
-    public function fazerPizza(){
-        echo $this->addRecheio();
-        echo $this->addQueijo();
+    public function fazerPizza() 
+    {
         echo $this->completarComOutraPizza();
     }
-
-    public abstract function addQueijo();
     
-    public abstract function addRecheio();
-
     public function completarComOutraPizza()
     {
         

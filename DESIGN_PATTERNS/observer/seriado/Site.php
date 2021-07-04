@@ -6,7 +6,7 @@ class Site implements SeriadoObserver, NovaTemporadaObserver
     {
         $nome = $seriado->getNome();
         $duracaoTotal = $seriado->getDuracaoTotal();
-        echo "<br/> Seriado $nome novo duração total de $duracaoTotal hrs.<br/>";
+        echo "<br/>Site: Seriado $nome novo duração total de $duracaoTotal hrs.<br/>";
     }
 
     public function notificarTemporada(Seriado $serie, Temporada $temporada)
@@ -14,6 +14,6 @@ class Site implements SeriadoObserver, NovaTemporadaObserver
         $nome = $serie->getNome();
         $numero = $temporada->getNumero();
         $epis = $temporada->getEpis();
-        echo "<br/> Alerta Nova Temporada: Nova temporada de $nome, $numero º, com $epis novos epis.<br/>";
+        echo "<br/>Site: Alerta Nova Temporada: Nova temporada de $nome, $numero º, com $epis novos epis.<br/>";
     }
 }
