@@ -6,7 +6,11 @@
 
 Padrão Service-Repository: 
 Permite realizar o isolamento entre a camada de acesso ao dado de
-sua aplicação e sua camada de apresentação, além da camada de negócios.
+sua aplicação e sua camada de apresentação, além da camada de negócios. Ele fornece uma maneira simples para encapsular o código de acesso de
+dados em seu aplicativo permitindo também que o código seja mais facilmente testável e
+que os módulos de código sejam mais facilmente reutilizáveis; além disso ele favorece a
+separação de interesses entre a lógica de acesso a dados e lógica de domínio do aplicativo.
+Ele praticamente nos trás organização, reaproveitamento, facilidade de uso e manutenção.
 
 #### controller
 Responsável por intermediar as requisições enviadas pela interface,
