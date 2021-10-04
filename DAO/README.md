@@ -5,6 +5,10 @@
 
 ## Todos os exemplos foram desenvolvidos em PHP.
 
+DAO​ seria considerado mais próximo do banco de dados, geralmente centrado na tabela.
+Este é outro Design Pattern onde somente há a comunicação com o banco de dados sem
+regra de negócio. ​ Repository​ seria considerado mais próximo do domínio, lidando apenas
+com raízes agregadas. Este retorna objetos de domínio que seriam as Entidades.
 
 ### OBS: Caso deseje enviar alguma sugestão/correção de: (Gramática, Definição, Novos Exemplos) 
 ### Sinta-se livre para mandar um PR.
