@@ -4,9 +4,22 @@
 
 ## Existe um exemplo simples em PHP dos padrões, sem implementação só abstração.
 
+Padrão Service-Repository: 
+Permite realizar o isolamento entre a camada de acesso ao dado de
+sua aplicação e sua camada de apresentação, além da camada de negócios.
+
+#### controller
+Responsável por intermediar as requisições enviadas pela interface,
+processando os dados que o usuário informou e repassando para outras camadas.
+
+#### service
+É a regra de negócio.
+
+#### entidade
+É responsável pelo acesso direto ao Banco de Dados.
+
 ### OBS: Caso deseje enviar alguma sugestão/correção de: (Gramática, Definição, Novos Exemplos) 
 ### Sinta-se livre para mandar um PR.
-
 
 **Fontes**
 
