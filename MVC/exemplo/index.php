@@ -1,10 +1,9 @@
-
-<form action="./exemplo/Controller.php">
+<form action="Controller.php">
     <label for="">
         Numero 1
         <input type="number" name="num1">
     </label>
-    
+
     <label for="">
         Numero 2
         <input type="number" name="num2">
