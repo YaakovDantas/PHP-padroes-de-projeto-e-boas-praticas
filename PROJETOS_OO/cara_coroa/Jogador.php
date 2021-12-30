@@ -25,10 +25,19 @@ class Jogador
 
     public function vencedor($lado)
     {
-        if ($lado == $this->ladoApostado) {
-            echo "$this->nome venceu, apostando: $lado </br>";
+        /*
+         * Coloquei essa alternativa simples caso o usuário execute o script no terminal
+         */
+        if (!isset($_SERVER['SHELL'])) {
+            $quebraDeLinha = '<br>';
         } else {
-            echo "$this->nome perdeu, resultado foi: $lado </br>";
+            $quebraDeLinha = PHP_EOL;
+        }
+
+        if ($lado == $this->ladoApostado) {
+            echo "$this->nome venceu, apostando: $lado" . $quebraDeLinha;
+        } else {
+            echo "$this->nome perdeu, resultado foi: $lado" . $quebraDeLinha;
         }
     }
 }
