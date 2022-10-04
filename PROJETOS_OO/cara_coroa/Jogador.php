@@ -25,7 +25,7 @@ class Jogador
 
     public function vencedor($lado)
     {
-        if ($lado == $this->ladoApostado) {
+        if ($lado === $this->ladoApostado) {
             echo "$this->nome venceu, apostando: $lado </br>";
         } else {
             echo "$this->nome perdeu, resultado foi: $lado </br>";
