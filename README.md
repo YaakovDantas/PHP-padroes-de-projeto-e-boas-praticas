@@ -20,7 +20,7 @@ php -S localhost:8080
 ### Sinta-se livre para mandar um PR.
 
 
-**Fontes**
+**Referências**
 
 DESIGN PATTERNS
 
