@@ -1,8 +1,8 @@
 # Padrões e boas praticas de programação
 
-#### Este repositório contém padrões de projeto, SOLID e boas práticas de programação O.O.Todos os exemplos foram desenvolvidos em PHP.
+#### Este repositório contém padrões de projeto, SOLID e boas práticas de programação O.O. Todos os exemplos foram desenvolvidos em PHP.
 
-## Para testar os exemplos, faça um clone dele.
+## Para testar os exemplos, faça um clone deste repositório.
 
 ## Entre na pasta raiz via terminal e digite o comando
 
