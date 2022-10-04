@@ -1,6 +1,6 @@
 # S.O.L.I.D.
 
-## Este diretório contem exemplos de SOLID para cada Letra, do acrônimo, existe um exemplo usando o principio de exemlo e sem o principio, com o fim de mostar o Antes/Depois.
+## Este diretório contém exemplos de SOLID para cada Letra, do acrônimo, existe um exemplo usando o principio de exemlo e sem o principio, com o fim de mostar o Antes/Depois.
 
 ## Todos os exemplos foram desenvolvidos em PHP.
 
