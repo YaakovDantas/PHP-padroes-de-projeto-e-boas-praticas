@@ -4,7 +4,7 @@ $raiz = './adapter/';
 ?>
 <h3>Adapter</h3>
 <h4>Definição:</h4>
-<p>Quando se quer prover uma interface de uso para outra classe, que não seja realmente especifica para aquele uso.</p>
+<p>Quando se quer prover uma interface de uso para outra classe, que não seja realmente específica para aquele uso.</p>
 
 <p>No lugar de trocar todos os métodos dessa classe para tal Uso.</p>
 
